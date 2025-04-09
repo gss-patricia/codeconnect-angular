@@ -1,1 +1,124 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Importação da fonte Prompt do Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&display=swap");
+
+// Importações de arquivos base
+@import "styles/variables";
+@import "styles/mixins";
+@import "styles/reset";
+@import "styles/utilities";
+
+// Estilos globais
+body {
+  font-family: $font-family-base;
+  background-color: var(--grafite);
+  color: var(--branco);
+  @include paragraph;
+}
+
+// Estilos base para links
+a {
+  color: var(--verde-destaque);
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: var(--verde-pastel);
+  }
+}
+
+// Estilos base para botões
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+// Estilos base para inputs
+input,
+textarea,
+select {
+  font-family: inherit;
+  background-color: var(--cinza-escuro);
+  border: 1px solid var(--cinza);
+  color: var(--branco);
+  border-radius: $border-radius-sm;
+  padding: $spacing-sm $spacing-md;
+
+  &:focus {
+    outline: none;
+    border-color: var(--verde-destaque);
+  }
+
+  &::placeholder {
+    color: var(--cinza-medio);
+  }
+}
+
+// Container principal
+.container {
+  @include container;
+}
+
+// Utilitários
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+
+.mt-1 {
+  margin-top: $spacing-xs;
+}
+.mt-2 {
+  margin-top: $spacing-sm;
+}
+.mt-3 {
+  margin-top: $spacing-md;
+}
+.mt-4 {
+  margin-top: $spacing-lg;
+}
+.mt-5 {
+  margin-top: $spacing-xl;
+}
+
+.mb-1 {
+  margin-bottom: $spacing-xs;
+}
+.mb-2 {
+  margin-bottom: $spacing-sm;
+}
+.mb-3 {
+  margin-bottom: $spacing-md;
+}
+.mb-4 {
+  margin-bottom: $spacing-lg;
+}
+.mb-5 {
+  margin-bottom: $spacing-xl;
+}
+
+// Responsividade
+@include respond-to(sm) {
+  .container {
+    padding: 0 $spacing-lg;
+  }
+}
+
+@include respond-to(md) {
+  .container {
+    padding: 0 $spacing-xl;
+  }
+}

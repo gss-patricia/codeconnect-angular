@@ -1,0 +1,74 @@
+// Tema claro (padrão)
+:root {
+  // Cores
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --error-color: #{$error-color};
+  --warning-color: #{$warning-color};
+  --info-color: #{$info-color};
+
+  // Cores de texto
+  --text-color: #{$text-color};
+  --text-color-light: #{$text-color-light};
+  --text-color-lighter: #{$text-color-lighter};
+
+  // Cores de fundo
+  --background-color: #{$background-color};
+  --background-light: #{$background-light};
+  --background-dark: #{$background-dark};
+
+  // Cores de borda
+  --border-color: #{$border-color};
+  --border-color-dark: #{$border-color-dark};
+}
+
+// Tema escuro
+[data-theme="dark"] {
+  // Cores
+  --primary-color: #4dabf7;
+  --secondary-color: #868e96;
+  --success-color: #40c057;
+  --error-color: #fa5252;
+  --warning-color: #ffd43b;
+  --info-color: #4dabf7;
+
+  // Cores de texto
+  --text-color: #f8f9fa;
+  --text-color-light: #dee2e6;
+  --text-color-lighter: #adb5bd;
+
+  // Cores de fundo
+  --background-color: #212529;
+  --background-light: #343a40;
+  --background-dark: #1a1d20;
+
+  // Cores de borda
+  --border-color: #495057;
+  --border-color-dark: #343a40;
+}
+
+// Tema de alto contraste
+[data-theme="high-contrast"] {
+  // Cores
+  --primary-color: #0000ff;
+  --secondary-color: #808080;
+  --success-color: #008000;
+  --error-color: #ff0000;
+  --warning-color: #ffff00;
+  --info-color: #00ffff;
+
+  // Cores de texto
+  --text-color: #000000;
+  --text-color-light: #404040;
+  --text-color-lighter: #808080;
+
+  // Cores de fundo
+  --background-color: #ffffff;
+  --background-light: #f0f0f0;
+  --background-dark: #e0e0e0;
+
+  // Cores de borda
+  --border-color: #000000;
+  --border-color-dark: #404040;
+}

@@ -1,0 +1,80 @@
+// Cores
+$verde-destaque: #81fe88;
+$verde-pastel: #bfffc3;
+$verde-petroleo: #132e35;
+$grafite: #01080e;
+$cinza-escuro: #171d1f;
+$cinza: #3e3e3f;
+$cinza-medio: #888888;
+$cinza-claro: #bcbcbc;
+$offwhite: #e1e1e1;
+$branco: #ffffff;
+
+// Variáveis CSS para temas
+:root {
+  --verde-destaque: #{$verde-destaque};
+  --verde-pastel: #{$verde-pastel};
+  --verde-petroleo: #{$verde-petroleo};
+  --grafite: #{$grafite};
+  --cinza-escuro: #{$cinza-escuro};
+  --cinza: #{$cinza};
+  --cinza-medio: #{$cinza-medio};
+  --cinza-claro: #{$cinza-claro};
+  --offwhite: #{$offwhite};
+  --branco: #{$branco};
+}
+
+// Tipografia
+$font-family-base: "Prompt", sans-serif;
+
+// Tamanhos de fonte
+$font-size-heading: 2.75rem; // 44px
+$font-size-heading-small: 2.313rem; // 37px
+$font-size-subtitle-large: 1.938rem; // 31px
+$font-size-subtitle: 1.625rem; // 26px
+$font-size-paragraph-large: 1.375rem; // 22px
+$font-size-paragraph: 1.125rem; // 18px
+$font-size-paragraph-small: 0.938rem; // 15px
+$font-size-label: 0.781rem; // 12.5px
+
+// Line heights
+$line-height-heading: 120%;
+$line-height-body: 150%;
+
+// Font weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+
+// Espaçamentos
+$spacing-xxs: 0.25rem; // 4px
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 0.75rem; // 12px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-xxl: 2.5rem; // 40px
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;

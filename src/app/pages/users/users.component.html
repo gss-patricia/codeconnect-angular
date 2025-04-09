@@ -1,0 +1,38 @@
+<div class="users-container">
+  <h2>Gerenciamento de Usuários</h2>
+
+  <!-- Formulário de busca -->
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch($event)"
+      placeholder="Buscar usuários..."
+      class="search-input"
+    />
+  </div>
+
+  <!-- Loading e Error states -->
+  <div *ngIf="loading" class="loading">Carregando usuários...</div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <!-- Lista de usuários -->
+  <div *ngIf="!loading && !error" class="users-list">
+    <div *ngFor="let user of filteredUsers" class="user-card">
+      <h3>{{ user.name }}</h3>
+      <p>{{ user.email }}</p>
+      <span [class]="user.active ? 'active' : 'inactive'">
+        {{ user.active ? "Ativo" : "Inativo" }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Estatísticas -->
+  <div class="stats" *ngIf="!loading && !error">
+    <p>Total de usuários: {{ totalUsers }}</p>
+    <p>Usuários ativos: {{ activeUsers }}</p>
+  </div>
+</div>

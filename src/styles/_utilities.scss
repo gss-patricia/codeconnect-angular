@@ -1,0 +1,225 @@
+// Classes de Tipografia
+.heading {
+  @include heading;
+}
+
+.heading-small {
+  @include heading-small;
+}
+
+.subtitle-large {
+  @include subtitle-large;
+}
+
+.subtitle {
+  @include subtitle;
+}
+
+.paragraph-large {
+  @include paragraph-large;
+}
+
+.paragraph {
+  @include paragraph;
+}
+
+.paragraph-small {
+  @include paragraph-small;
+}
+
+.label {
+  @include label;
+}
+
+// Classes de Cores
+.text-verde-destaque {
+  color: var(--verde-destaque);
+}
+
+.text-verde-pastel {
+  color: var(--verde-pastel);
+}
+
+.text-verde-petroleo {
+  color: var(--verde-petroleo);
+}
+
+.text-grafite {
+  color: var(--grafite);
+}
+
+.text-cinza-escuro {
+  color: var(--cinza-escuro);
+}
+
+.text-cinza {
+  color: var(--cinza);
+}
+
+.text-cinza-medio {
+  color: var(--cinza-medio);
+}
+
+.text-cinza-claro {
+  color: var(--cinza-claro);
+}
+
+.text-offwhite {
+  color: var(--offwhite);
+}
+
+.text-branco {
+  color: var(--branco);
+}
+
+// Classes de Background
+.bg-verde-destaque {
+  background-color: var(--verde-destaque);
+}
+
+.bg-verde-pastel {
+  background-color: var(--verde-pastel);
+}
+
+.bg-verde-petroleo {
+  background-color: var(--verde-petroleo);
+}
+
+.bg-grafite {
+  background-color: var(--grafite);
+}
+
+.bg-cinza-escuro {
+  background-color: var(--cinza-escuro);
+}
+
+.bg-cinza {
+  background-color: var(--cinza);
+}
+
+.bg-cinza-medio {
+  background-color: var(--cinza-medio);
+}
+
+.bg-cinza-claro {
+  background-color: var(--cinza-claro);
+}
+
+.bg-offwhite {
+  background-color: var(--offwhite);
+}
+
+.bg-branco {
+  background-color: var(--branco);
+}
+
+// Classes de Layout
+.container {
+  @include container;
+}
+
+.card {
+  @include card;
+}
+
+// Classes de Flexbox
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  @include flex(column);
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+// Classes de Grid
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+// Classes de Espaçamento
+.m-0 {
+  margin: 0;
+}
+.m-1 {
+  margin: $spacing-xxs;
+}
+.m-2 {
+  margin: $spacing-xs;
+}
+.m-3 {
+  margin: $spacing-sm;
+}
+.m-4 {
+  margin: $spacing-md;
+}
+.m-5 {
+  margin: $spacing-lg;
+}
+.m-6 {
+  margin: $spacing-xl;
+}
+.m-7 {
+  margin: $spacing-xxl;
+}
+
+.p-0 {
+  padding: 0;
+}
+.p-1 {
+  padding: $spacing-xxs;
+}
+.p-2 {
+  padding: $spacing-xs;
+}
+.p-3 {
+  padding: $spacing-sm;
+}
+.p-4 {
+  padding: $spacing-md;
+}
+.p-5 {
+  padding: $spacing-lg;
+}
+.p-6 {
+  padding: $spacing-xl;
+}
+.p-7 {
+  padding: $spacing-xxl;
+}
+
+// Classes de Borda
+.rounded-sm {
+  border-radius: $border-radius-sm;
+}
+
+.rounded-md {
+  border-radius: $border-radius-md;
+}
+
+.rounded-lg {
+  border-radius: $border-radius-lg;
+}
