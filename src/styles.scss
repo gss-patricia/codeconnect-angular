@@ -9,23 +9,112 @@
 @import "styles/reset";
 @import "styles/utilities";
 
-// Estilos globais
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: $font-family-base;
-  background-color: var(--grafite);
-  color: var(--branco);
+  background-color: $grafite;
+  color: $branco;
+  line-height: $line-height-body;
+  min-height: 100vh;
   @include paragraph;
 }
 
-// Estilos base para links
+// Utility classes
+.text-verde-destaque {
+  color: $verde-destaque;
+}
+
+.text-verde-pastel {
+  color: $verde-pastel;
+}
+
+.bg-grafite {
+  background-color: $grafite;
+}
+
+.bg-verde-petroleo {
+  background-color: $verde-petroleo;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// Form elements
+input,
+textarea,
+select {
+  @include input-base;
+}
+
+button {
+  @include button-base;
+}
+
+.btn-primary {
+  @include button-primary;
+}
+
+// Links
 a {
-  color: var(--verde-destaque);
+  color: $verde-destaque;
   text-decoration: none;
-  transition: color $transition-fast;
+  transition: $transition-base;
 
   &:hover {
-    color: var(--verde-pastel);
+    color: $verde-pastel;
   }
+}
+
+// Typography classes
+.heading {
+  @include heading;
+}
+
+.heading-small {
+  @include heading-small;
+}
+
+.subtitle-large {
+  @include subtitle-large;
+}
+
+.subtitle {
+  @include subtitle;
+}
+
+.paragraph-large {
+  @include paragraph-large;
+}
+
+.paragraph {
+  @include paragraph;
+}
+
+.paragraph-small {
+  @include paragraph-small;
+}
+
+.label {
+  @include label;
+}
+
+// Flexbox utilities
+.flex-center {
+  @include flex-center;
+}
+
+.flex-column {
+  @include flex-column;
 }
 
 // Estilos base para botões
@@ -49,7 +138,7 @@ select {
   background-color: var(--cinza-escuro);
   border: 1px solid var(--cinza);
   color: var(--branco);
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius;
   padding: $spacing-sm $spacing-md;
 
   &:focus {
@@ -60,11 +149,6 @@ select {
   &::placeholder {
     color: var(--cinza-medio);
   }
-}
-
-// Container principal
-.container {
-  @include container;
 }
 
 // Utilitários

@@ -1,6 +1,6 @@
-// Cores
+// Colors
 $verde-destaque: #81fe88;
-$verde-pastel: #bfffc3;
+$verde-pastel: #BFFC3;
 $verde-petroleo: #132e35;
 $grafite: #01080e;
 $cinza-escuro: #171d1f;
@@ -24,10 +24,10 @@ $branco: #ffffff;
   --branco: #{$branco};
 }
 
-// Tipografia
+// Typography
 $font-family-base: "Prompt", sans-serif;
 
-// Tamanhos de fonte
+// Font sizes
 $font-size-heading: 2.75rem; // 44px
 $font-size-heading-small: 2.313rem; // 37px
 $font-size-subtitle-large: 1.938rem; // 31px
@@ -45,30 +45,24 @@ $line-height-body: 150%;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 
-// Espaçamentos
-$spacing-xxs: 0.25rem; // 4px
+// Spacing
 $spacing-xs: 0.5rem; // 8px
 $spacing-sm: 0.75rem; // 12px
 $spacing-md: 1rem; // 16px
 $spacing-lg: 1.5rem; // 24px
 $spacing-xl: 2rem; // 32px
-$spacing-xxl: 2.5rem; // 40px
+
+// Border radius
+$border-radius: 0.5rem; // 8px
+
+// Transitions
+$transition-base: all 0.3s ease;
 
 // Breakpoints
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
-
-// Border radius
-$border-radius-sm: 4px;
-$border-radius-md: 8px;
-$border-radius-lg: 12px;
-
-// Transitions
-$transition-fast: 0.2s ease;
-$transition-normal: 0.3s ease;
-$transition-slow: 0.5s ease;
 
 // Z-index
 $z-index-dropdown: 1000;

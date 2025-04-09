@@ -119,7 +119,7 @@
 // Cards e Containers
 @mixin card {
   background-color: var(--grafite);
-  border-radius: $border-radius-md;
+  border-radius: $border-radius;
   padding: $spacing-md;
   border: 1px solid var(--cinza-escuro);
 }
@@ -139,7 +139,7 @@
 @mixin button-base {
   padding: $spacing-sm $spacing-md;
   border: none;
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius;
   cursor: pointer;
   transition: background-color $transition-fast;
   font-weight: 500;
@@ -159,7 +159,7 @@
 @mixin input-base {
   padding: $spacing-sm;
   border: 1px solid $border-color;
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius;
   transition: border-color $transition-fast, box-shadow $transition-fast;
 
   &:focus {
@@ -181,4 +181,61 @@
   -webkit-line-clamp: $lines;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+// Layout mixins
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Form mixins
+@mixin input-base {
+  width: 100%;
+  padding: $spacing-sm;
+  border: 1px solid $cinza-medio;
+  border-radius: $border-radius;
+  background-color: $grafite;
+  color: $branco;
+  font-family: $font-family-base;
+  font-size: $font-size-paragraph;
+  transition: $transition-base;
+
+  &::placeholder {
+    color: $cinza-medio;
+  }
+
+  &:focus {
+    border-color: $verde-destaque;
+    outline: none;
+  }
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $border-radius;
+  font-family: $font-family-base;
+  font-size: $font-size-paragraph;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: $transition-base;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $verde-destaque;
+  color: $grafite;
+
+  &:hover:not(:disabled) {
+    background-color: darken($verde-destaque, 5%);
+  }
 }
