@@ -12,11 +12,20 @@
 .login-card {
   display: flex;
   background-color: var(--cinza-escuro);
-  border-radius: $border-radius;
+  border-radius: 32px;
   overflow: hidden;
   max-width: 1200px;
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-card-content {
+  display: flex;
+  padding: 56px 78px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 23px;
 }
 
 .login-image {
@@ -118,12 +127,6 @@
   }
 }
 
-.social-login {
-  @include flex-column;
-  gap: $spacing-lg;
-  margin-top: $spacing-lg;
-}
-
 .divider {
   position: relative;
   text-align: center;
@@ -153,41 +156,11 @@
   }
 }
 
-.social-buttons {
-  display: flex;
-  gap: $spacing-md;
-}
-
-.social-button {
-  flex: 1;
-  background-color: var(--grafite);
-  padding: $spacing-md;
-  border: 1px solid var(--cinza);
-  border-radius: $border-radius;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: $spacing-sm;
-  cursor: pointer;
-  transition: $transition-base;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
-
-  span {
-    color: var(--branco);
-  }
-
-  &:hover {
-    background-color: lighten($grafite, 5%);
-  }
-}
-
 .signup-link {
   text-align: center;
-  margin-top: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
   a {
     margin-left: $spacing-xs;
@@ -211,9 +184,5 @@
 
   .login-form {
     padding: $spacing-lg;
-  }
-
-  .social-buttons {
-    flex-direction: column;
   }
 }

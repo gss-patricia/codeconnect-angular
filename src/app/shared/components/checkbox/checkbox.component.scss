@@ -1,0 +1,58 @@
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--cinza-medio);
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.2s ease;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+    background-color: var(--verde-destaque);
+    mask: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3334 4L6.00008 11.3333L2.66675 8' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      no-repeat center;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3334 4L6.00008 11.3333L2.66675 8' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      no-repeat center;
+  }
+}
+
+input[type="checkbox"]:checked ~ .checkmark {
+  background-color: transparent;
+
+  &:after {
+    display: block;
+  }
+}
+
+.label-text {
+  font-family: "Prompt", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  color: #888888;
+}

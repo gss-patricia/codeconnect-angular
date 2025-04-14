@@ -1,0 +1,29 @@
+.custom-link {
+  font-family: "Prompt", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.text-cinza-claro {
+    color: var(--offwhite);
+  }
+
+  &.text-cinza-medio {
+    color: var(--cinza-medio);
+  }
+
+  &.text-verde-destaque {
+    color: var(--verde-destaque);
+  }
+}
