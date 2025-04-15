@@ -7,6 +7,8 @@
   background-color: var(--grafite);
   padding: $spacing-md;
   gap: $spacing-lg;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 // Header e Busca
@@ -216,4 +218,23 @@
 .author-name {
   color: var(--cinza-medio);
   font-size: $font-size-paragraph-small;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .home-container {
+    padding: 16px;
+  }
+
+  .posts-list {
+    gap: 16px;
+    margin-top: 24px;
+  }
 }

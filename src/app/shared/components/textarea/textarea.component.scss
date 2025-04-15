@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--cinza-claro);
+  padding: 16px;
+  color: var(--cinza);
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  resize: vertical;
+  min-height: 120px;
+  outline: none;
+  transition: background-color 0.2s ease;
+
+  &::placeholder {
+    color: var(--cinza);
+    opacity: 0.7;
+  }
+
+  &:focus {
+    background-color: var(--branco);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
