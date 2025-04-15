@@ -15,6 +15,10 @@
   @include subtitle;
 }
 
+.text-lg {
+  @include text-lg;
+}
+
 .paragraph-large {
   @include paragraph-large;
 }
@@ -127,6 +131,13 @@
   display: flex;
 }
 
+.flex-center-gap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm; // 12px
+}
+
 .flex-col {
   @include flex(column);
 }
@@ -141,6 +152,10 @@
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-3 {
+  gap: $spacing-sm; // 12px
 }
 
 // Classes de Grid

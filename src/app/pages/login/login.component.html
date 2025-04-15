@@ -7,20 +7,13 @@
           alt="Code Connect"
           class="main-image"
         />
-        <div class="logo">
-          <img
-            src="assets/images/logo.svg"
-            alt="Code Connect Logo"
-            class="logo-image"
-          />
-        </div>
       </div>
 
       <div class="login-form">
         <h1 class="heading text-branco">Login</h1>
-        <p class="subtitle text-cinza-claro">Boas-vindas! Faça seu login.</p>
+        <p class="subtitle text-offwhite">Boas-vindas! Faça seu login.</p>
 
-        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <form class="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
           <div class="form-group">
             <app-input
               label="Email ou usuário"
@@ -32,7 +25,7 @@
             ></app-input>
           </div>
 
-          <div class="form-group">
+          <div class="form-group password-group">
             <app-input
               label="Senha"
               type="password"
@@ -65,12 +58,16 @@
 
         <p class="signup-link paragraph-small text-cinza-claro">
           Ainda não tem conta?
-          <app-link
-            to="/signup"
-            variant="highlight"
-            customClass="paragraph-large"
-          >
-            Crie seu cadastro!
+          <app-link to="/signup" variant="highlight">
+            <span class="text-lg signup-text">
+              Crie seu cadastro!
+              <img
+                src="assets/assignment.svg"
+                alt="Cadastro"
+                width="24"
+                height="24"
+              />
+            </span>
           </app-link>
         </p>
       </div>

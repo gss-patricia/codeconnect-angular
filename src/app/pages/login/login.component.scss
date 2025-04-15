@@ -5,6 +5,7 @@
   min-height: 100vh;
   width: 100%;
   padding: $spacing-xl;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -13,24 +14,31 @@
   display: flex;
   background-color: var(--cinza-escuro);
   border-radius: 32px;
+  border: 1px solid #00090e;
   overflow: hidden;
-  max-width: 1200px;
   width: 100%;
+  max-width: 996px;
+  height: 748px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .login-card-content {
   display: flex;
-  padding: 56px 78px;
   width: 100%;
-  justify-content: space-between;
+  height: 100%;
+  justify-content: center;
   align-items: center;
-  gap: 23px;
+  padding: 56px;
 }
 
 .login-image {
   position: relative;
-  flex: 1;
+  width: 407px;
+  height: 628px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0; // (748px - 628px) / 2 = 60px para centralizar verticalmente
 
   .main-image {
     width: 100%;
@@ -50,23 +58,29 @@
   }
 }
 
+.form {
+  @include flex-column;
+  width: 100%;
+}
+
 .login-form {
   flex: 1;
-  padding: $spacing-xl;
+  padding: 56px;
   @include flex-column;
-  gap: $spacing-lg;
+  max-width: 486px; // 996px - 407px - 23px(gap) - 80px(padding total) = 486px
 
   .heading {
-    margin-bottom: $spacing-xs;
+    font-size: $font-size-subtitle-large;
+    margin-bottom: $spacing-lg;
   }
 
   .subtitle {
     margin-bottom: $spacing-xl;
+    font-size: $font-size-paragraph-large;
   }
 
   form {
     @include flex-column;
-    gap: $spacing-md;
     width: 100%;
   }
 }
@@ -100,7 +114,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: $spacing-sm 0 $spacing-lg;
+  margin-bottom: $spacing-lg;
+  margin-top: 7px;
 }
 
 .btn-primary {
@@ -116,10 +131,10 @@
   justify-content: center;
   gap: $spacing-sm;
   cursor: pointer;
-  transition: $transition-base;
+  transition: opacity 0.2s ease;
 
   &:hover {
-    background-color: darken($verde-destaque, 5%);
+    opacity: 0.9;
   }
 
   i {
@@ -156,15 +171,23 @@
   }
 }
 
+.password-group {
+  margin-top: 14px;
+}
+
 .signup-link {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  margin-top: 20px;
+  font-family: var(--font-family);
+  font-size: 15px;
+  color: var(--cinza-claro);
 
-  a {
-    margin-left: $spacing-xs;
-    font-weight: $font-weight-medium;
+  .signup-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    margin-top: 8px;
   }
 }
 
@@ -175,14 +198,33 @@
   }
 
   .login-card {
+    height: auto;
+    min-height: 600px;
+  }
+
+  .login-card-content {
     flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .login-image,
+  .login-form {
+    max-width: 100%;
   }
 
   .login-image {
+    max-width: 100%;
     height: 200px;
+
+    .main-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .login-form {
-    padding: $spacing-lg;
+    padding: 24px 0;
   }
 }

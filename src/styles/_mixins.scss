@@ -13,6 +13,13 @@
   line-height: $line-height-heading;
 }
 
+@mixin text-lg {
+  font-family: $font-family-base;
+  font-size: $font-size-paragraph;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-body;
+}
+
 @mixin subtitle-large {
   font-family: $font-family-base;
   font-size: $font-size-subtitle-large;
@@ -150,8 +157,8 @@
   background-color: $primary-color;
   color: white;
 
-  &:hover {
-    background-color: darken($primary-color, 10%);
+  &:hover:not(:disabled) {
+    opacity: 0.9;
   }
 }
 
@@ -236,6 +243,6 @@
   color: $grafite;
 
   &:hover:not(:disabled) {
-    background-color: darken($verde-destaque, 5%);
+    opacity: 0.9;
   }
 }
