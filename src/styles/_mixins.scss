@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 // Tipografia
 @mixin heading {
   font-family: $font-family-base;

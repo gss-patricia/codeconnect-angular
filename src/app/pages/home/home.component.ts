@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ButtonComponent } from '../../components/button/button.component';
 import { CardPostComponent } from '../../shared/components/card-post/card-post.component';
 import { MOCK_POSTS } from '../../shared/mocks/posts.mock';
 import { Post } from '../../shared/models/post.model';
@@ -9,7 +7,7 @@ import { Post } from '../../shared/models/post.model';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule, ButtonComponent, CardPostComponent],
+  imports: [CommonModule, CardPostComponent],
   template: `
     <main class="home-container">
       <section class="posts-list">
@@ -27,22 +25,7 @@ import { Post } from '../../shared/models/post.model';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  searchTerm: string = '';
-  selectedTags: string[] = ['Front-end', 'React', 'Acessibilidade'];
   posts: Post[] = MOCK_POSTS;
-
-  onSearch(term: string): void {
-    // Implementar lógica de busca
-    console.log('Searching for:', term);
-  }
-
-  removeTag(tag: string): void {
-    this.selectedTags = this.selectedTags.filter((t) => t !== tag);
-  }
-
-  clearAllTags(): void {
-    this.selectedTags = [];
-  }
 
   handleLike(postId: string) {
     console.log('Like clicked:', postId);

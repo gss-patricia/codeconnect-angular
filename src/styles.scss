@@ -1,13 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use "styles/variables" as *;
+@use "styles/mixins" as *;
+@use "styles/reset" as *;
+@use "styles/utilities" as *;
+
 // Importação da fonte Prompt do Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&display=swap");
-
-// Importações de arquivos base
-@import "styles/variables";
-@import "styles/mixins";
-@import "styles/reset";
-@import "styles/utilities";
 
 * {
   margin: 0;

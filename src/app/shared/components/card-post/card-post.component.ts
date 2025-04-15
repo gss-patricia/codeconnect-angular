@@ -2,17 +2,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AvatarComponent } from '../avatar/avatar.component';
-import { IconButtonComponent } from '../icon-button/icon-button.component';
-import { ThumbsUpButtonComponent } from './thumbs-up-button.component';
-import { ModalCommentComponent } from '../modal-comment/modal-comment.component';
 import { Post } from '../../models/post.model';
 import { ThumbsUpIconComponent } from '../icons/thumbs-up-icon.component';
 import { ChatIconComponent } from '../icons/chat-icon.component';
-
-interface Author {
-  name: string;
-  avatar: string;
-}
 
 @Component({
   selector: 'app-card-post',
@@ -21,9 +13,6 @@ interface Author {
     CommonModule,
     RouterLink,
     AvatarComponent,
-    IconButtonComponent,
-    ThumbsUpButtonComponent,
-    ModalCommentComponent,
     ThumbsUpIconComponent,
     ChatIconComponent,
   ],

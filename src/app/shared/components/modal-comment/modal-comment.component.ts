@@ -1,13 +1,6 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IconButtonComponent } from '../icon-button/icon-button.component';
 import { ModalComponent } from '../modal/modal.component';
 import { ChatIconComponent } from '../icons/chat-icon.component';
 import { TextareaComponent } from '../textarea/textarea.component';
@@ -19,7 +12,6 @@ import { SubheadingComponent } from '../subheading/subheading.component';
   imports: [
     CommonModule,
     FormsModule,
-    IconButtonComponent,
     ModalComponent,
     ChatIconComponent,
     TextareaComponent,
