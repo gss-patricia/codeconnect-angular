@@ -54,6 +54,7 @@ import { CommentComponent } from '../comment/comment.component';
 
       .btn {
         color: var(--grafite);
+        align-self: flex-start;
         font-size: 15px;
         font-style: normal;
         font-weight: 600;

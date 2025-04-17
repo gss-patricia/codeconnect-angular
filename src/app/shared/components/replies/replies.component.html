@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="replies">
+    <button class="btn" (click)="toggleReplies()" (mouseover)="fetchReplies()">
+      {{ showReplies ? "Ocultar" : "Ver" }} respostas
+    </button>
+    @if (showReplies && replies.length) {
+    <ul>
+      @for (reply of replies; track reply.id) {
+      <li class="reply-item">
+        <app-comment [comment]="reply"></app-comment>
+        <app-reply-modal [comment]="reply"></app-reply-modal>
+      </li>
+      }
+    </ul>
+    }
+  </div>
+</div>
