@@ -1,80 +1,33 @@
-<div class="home-container">
-  <!-- Header com barra de busca e tags -->
-  <header class="search-header">
-    <div class="search-bar">
-      <i class="search-icon">🔍</i>
-      <input
-        type="text"
-        [(ngModel)]="searchTerm"
-        (input)="onSearch(searchTerm)"
-        placeholder="Digite o que você procura"
-        class="search-input"
+<div class="app-container">
+  <div class="aside-wrapper">
+    <app-aside />
+  </div>
+  <div class="main-content">
+    <app-search-form />
+    <div class="grid">
+      @for (post of posts; track post.id) {
+      <app-card-post
+        [post]="post"
+        [highlight]="false"
+        (onLike)="handleLike($event)"
+        (onComment)="handleComment($event)"
       />
+      }
+      <div class="links">
+        @if (hasPreviousPage) {
+        <app-button variant="link" (onClick)="goToPage(currentPage - 1)">
+          Página anterior
+        </app-button>
+        }
+        <span class="page-info"
+          >Página {{ currentPage }} de {{ totalPages }}</span
+        >
+        @if (hasNextPage) {
+        <app-button variant="link" (onClick)="goToPage(currentPage + 1)">
+          Próxima página
+        </app-button>
+        }
+      </div>
     </div>
-
-    <div class="tags-container">
-      <div class="selected-tags">
-        <span *ngFor="let tag of selectedTags" class="tag">
-          {{ tag }}
-          <button (click)="removeTag(tag)" class="tag-remove">×</button>
-        </span>
-      </div>
-      <button
-        *ngIf="selectedTags.length > 0"
-        (click)="clearAllTags()"
-        class="clear-tags"
-      >
-        Limpar tudo
-      </button>
-    </div>
-  </header>
-
-  <!-- Seção de navegação -->
-  <nav class="feed-nav">
-    <a href="#" class="nav-link active">Recentes</a>
-    <a href="#" class="nav-link">Populares</a>
-  </nav>
-
-  <!-- Grid de posts -->
-  <div class="posts-grid">
-    <!-- Post Card (será um componente separado) -->
-    <article class="post-card" *ngFor="let i of [1, 2, 3, 4]">
-      <div class="post-image">
-        <!-- Placeholder para imagem -->
-        <img src="assets/placeholder.jpg" alt="Post preview" />
-      </div>
-      <div class="post-content">
-        <h2 class="post-title">Título do post em duas linhas</h2>
-        <p class="post-description">
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint.
-        </p>
-      </div>
-      <footer class="post-footer">
-        <div class="post-stats">
-          <span class="stat">
-            <i class="icon">👁️</i>
-            12
-          </span>
-          <span class="stat">
-            <i class="icon">↗️</i>
-            12
-          </span>
-          <span class="stat">
-            <i class="icon">💬</i>
-            12
-          </span>
-        </div>
-        <div class="post-author">
-          <img
-            src="assets/avatar-placeholder.jpg"
-            alt="Author"
-            class="author-avatar"
-          />
-          <span class="author-name">julio</span>
-        </div>
-      </footer>
-    </article>
   </div>
 </div>

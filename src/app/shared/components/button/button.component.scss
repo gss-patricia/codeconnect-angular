@@ -1,0 +1,57 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+:host {
+  display: inline-block;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.primary {
+    background-color: var(--verde-destaque);
+    color: var(--grafite);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+
+    &:hover:not(:disabled) {
+      opacity: 0.9;
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: var(--verde-destaque);
+    padding: 12px 24px;
+    border: 1px solid var(--verde-destaque);
+    border-radius: 4px;
+    font-weight: 500;
+
+    &:hover:not(:disabled) {
+      background-color: var(--verde-destaque);
+      color: var(--grafite);
+    }
+  }
+
+  &.link {
+    background: none;
+    color: var(--verde-destaque);
+    padding: 0;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover:not(:disabled) {
+      opacity: 0.8;
+    }
+  }
+}

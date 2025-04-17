@@ -1,0 +1,29 @@
+.form {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.input {
+  flex-grow: 1;
+  border-radius: 4px;
+  background: var(--cinza-escuro);
+  border: none;
+  padding: 8px 16px;
+  color: var(--cinza-claro);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  outline: none;
+  transition: background-color 0.2s ease;
+
+  &::placeholder {
+    color: var(--cinza-medio);
+  }
+
+  &:focus {
+    background: var(--cinza);
+  }
+}

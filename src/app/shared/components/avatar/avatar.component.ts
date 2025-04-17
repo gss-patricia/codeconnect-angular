@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
       <li>
         <img [src]="imageSrc" [alt]="name" width="32" height="32" />
       </li>
-      <li>{{ name }}</li>
+      <li>{{ '@' + name }}</li>
     </ul>
   `,
   styleUrl: './avatar.component.scss',

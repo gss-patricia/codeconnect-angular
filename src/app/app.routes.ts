@@ -9,16 +9,18 @@ export const routes: Routes = [
       import('./pages/login/login.component').then((m) => m.LoginComponent),
   },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
+    component: HomeComponent,
   },
   {
     path: 'users',
     component: UsersComponent,
+  },
+  {
+    path: 'posts/:slug',
+    loadComponent: () =>
+      import('./pages/post-detail/post-detail.component').then(
+        (m) => m.PostDetailComponent
+      ),
   },
 ];

@@ -29,8 +29,10 @@ import { ChatIconComponent } from '../icons/chat-icon.component';
       </header>
       <section class="body">
         <h2>{{ post.title }}</h2>
-        <p>{{ post.body }}</p>
+        <p>{{ highlight ? post.body : truncateBody(post.body) }}</p>
+        @if (!highlight) {
         <a [routerLink]="['/posts', post.slug]">Ver detalhes</a>
+        }
       </section>
       <footer class="footer">
         <div class="actions">
@@ -62,6 +64,19 @@ export class CardPostComponent {
 
   @Output() onLike = new EventEmitter<string>();
   @Output() onComment = new EventEmitter<string>();
+
+  truncateBody(text: string): string {
+    // Divide o texto em linhas
+    const lines = text.split('\n');
+
+    // Se tiver 3 ou menos linhas, retorna o texto original
+    if (lines.length <= 3) {
+      return text;
+    }
+
+    // Pega apenas as 3 primeiras linhas e adiciona reticências
+    return lines.slice(0, 3).join('\n') + '...';
+  }
 
   handleLike() {
     this.onLike.emit(this.post.body);

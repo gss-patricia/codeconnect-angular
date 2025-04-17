@@ -1,0 +1,18 @@
+@if (post) {
+<div class="app-container">
+  <div class="aside-wrapper">
+    <app-aside />
+  </div>
+  <div class="main-content">
+    <app-card-post [post]="post" [highlight]="true"></app-card-post>
+    <h3 class="subtitle">Código:</h3>
+    <div class="code" [innerHTML]="post.markdown"></div>
+    <app-comment-list
+      [comments]="post.comments"
+      [post]="post"
+    ></app-comment-list>
+  </div>
+</div>
+} @else {
+<div class="loading">Carregando...</div>
+}

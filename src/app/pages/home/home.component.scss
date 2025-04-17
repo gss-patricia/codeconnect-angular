@@ -1,14 +1,14 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
 
-.home-container {
-  @include flex-column;
-  min-height: 100vh;
-  background-color: var(--grafite);
-  padding: $spacing-md;
-  gap: $spacing-lg;
-  max-width: 1200px;
-  margin: 0 auto;
+.aside-wrapper {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.main-content {
+  flex: 1;
+  max-width: calc(100% - 224px); // 200px do aside + 24px de gap
 }
 
 // Header e Busca
@@ -227,14 +227,59 @@
   margin-top: 32px;
 }
 
+.grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  app-card-post {
+    flex: 0 1 calc(50% - 12px); // 2 cards por linha com gap de 24px
+    min-width: 300px; // Largura mínima para evitar cards muito estreitos
+  }
+}
+
+.links {
+  width: 100%;
+  text-align: center;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  .page-info {
+    color: var(--cinza-medio);
+    font-size: 14px;
+  }
+}
+
 // Responsive styles
-@media (max-width: 768px) {
-  .home-container {
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
     padding: 16px;
   }
 
-  .posts-list {
-    gap: 16px;
-    margin-top: 24px;
+  .aside-wrapper {
+    width: 100%;
+  }
+
+  .main-content {
+    max-width: 100%;
+  }
+
+  .grid {
+    justify-content: center;
+
+    app-card-post {
+      flex: 0 1 100%; // 1 card por linha em telas menores
+    }
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 8px;
   }
 }

@@ -1,16 +1,13 @@
 .card {
-  border-radius: 8px;
-  background: var(--cinza-escuro);
+  background-color: var(--cinza-escuro);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--cinza);
 }
 
 .header {
-  border-radius: 8px 8px 0px 0px;
-  background: var(--cinza-medio);
-  padding: 24px;
-
   figure {
     margin: 0;
-    position: relative;
     width: 100%;
     overflow: hidden;
 
@@ -23,116 +20,55 @@
 }
 
 .body {
-  color: var(--cinza-claro);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  padding: 24px;
 
   h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    line-height: 150%;
-    margin: 0;
+    color: var(--branco);
+    margin: 0 0 8px;
   }
 
   p {
     font-size: 15px;
-    font-weight: 400;
     line-height: 150%;
-    margin: 0;
-    flex-grow: 1;
+    color: var(--cinza-claro);
+    margin: 0 0 16px;
+    white-space: pre-line;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   a {
     color: var(--verde-destaque);
     text-decoration: none;
-    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
 
     &:hover {
-      text-decoration: underline;
+      opacity: 0.8;
     }
   }
 }
 
 .footer {
-  padding: 16px;
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  p {
-    margin: 0;
-    color: var(--cinza-medio);
-    font-size: 15px;
-    text-align: center;
-  }
 }
 
 .actions {
   display: flex;
-  gap: 16px;
+  gap: 24px;
 }
 
 .action-group {
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.card-post {
-  background-color: var(--cinza-escuro);
-  border-radius: 16px;
-  padding: 24px;
-  width: 100%;
-}
-
-.post-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-
-  time {
-    color: var(--cinza-medio);
-    font-size: 14px;
-  }
-}
-
-.author-info {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.author-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.author-name {
-  color: var(--branco);
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.post-content {
-  color: var(--branco);
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 24px;
-
-  p {
-    margin: 0;
-    white-space: pre-wrap;
-  }
-}
-
-.post-footer {
-  display: flex;
-  gap: 24px;
 }
 
 .action-button {
@@ -141,16 +77,17 @@
   gap: 8px;
   background: none;
   border: none;
+  padding: 0;
   color: var(--cinza-medio);
+  font-size: 15px;
   cursor: pointer;
-  padding: 8px;
   transition: color 0.2s ease;
 
   &:hover {
-    color: var(--verde-destaque);
+    color: var(--branco);
   }
 
   span {
-    font-size: 14px;
+    line-height: 1;
   }
 }

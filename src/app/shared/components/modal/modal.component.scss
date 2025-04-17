@@ -5,6 +5,9 @@
   width: 960px;
   max-width: 80%;
   border: none;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
 
   &::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
