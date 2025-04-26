@@ -3,9 +3,62 @@
   background: var(--cinza-escuro);
   padding: 40px 24px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
 
+.logo {
   img {
     width: 150px;
     height: auto;
   }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-item {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #888888;
+  transition: color 0.2s ease;
+
+  span {
+    font-size: 0.875rem;
+  }
+}
+
+.menu-item:hover {
+  background: var(--cinza-medio);
+
+  .menu-content {
+    color: #fff;
+  }
+}
+
+.menu-item.active .menu-content {
+  color: #fff;
+}
+
+.logout {
+  margin-top: auto;
 }

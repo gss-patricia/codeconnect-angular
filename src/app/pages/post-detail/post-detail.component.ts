@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CardPostComponent } from '../../shared/components/card-post/card-post.component';
@@ -20,7 +20,7 @@ import { AsideComponent } from '../../shared/components/aside/aside.component';
   styleUrl: './post-detail.component.scss',
 })
 export class PostDetailComponent implements OnInit {
-  post: Post | null = null;
+  post = signal<Post | null>(null);
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -32,9 +32,10 @@ export class PostDetailComponent implements OnInit {
   }
 
   private getPostBySlug(slug: string) {
-    this.post = MOCK_POSTS.find((post) => post.slug === slug) || null;
+    const foundPost = MOCK_POSTS.find((post) => post.slug === slug) || null;
+    this.post.set(foundPost);
 
-    if (!this.post) {
+    if (!foundPost) {
       this.router.navigate(['/not-found']);
     }
   }

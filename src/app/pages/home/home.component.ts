@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CardPostComponent } from '../../shared/components/card-post/card-post.component';
 import { SearchFormComponent } from '../../shared/components/search-form/search-form.component';
 import { AsideComponent } from '../../shared/components/aside/aside.component';
@@ -23,56 +23,47 @@ import { processPostsContent } from '../../shared/helpers/text.helper';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  allPosts: Post[] = processPostsContent(MOCK_POSTS);
-  posts: Post[] = [];
-  currentPage: number = 1;
-  itemsPerPage: number = 4;
-  totalPages: number = Math.ceil(MOCK_POSTS.length / this.itemsPerPage);
+  posts = signal<Post[]>(processPostsContent(MOCK_POSTS));
+  currentPage = signal(1);
+  itemsPerPage = signal(4);
+
+  paginatedPosts = computed(() => {
+    const startIndex = (this.currentPage() - 1) * this.itemsPerPage();
+    const endIndex = startIndex + this.itemsPerPage();
+    return this.posts().slice(startIndex, endIndex);
+  });
+
+  totalPages = computed(() =>
+    Math.ceil(this.posts().length / this.itemsPerPage())
+  );
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    // Inscreve-se nas mudanças dos parâmetros da rota
     this.route.queryParams.subscribe((params) => {
-      this.currentPage = Number(params['page']) || 1;
-      this.loadPosts();
+      const page = Number(params['page']) || 1;
+      this.currentPage.set(page);
     });
-  }
-
-  private loadPosts() {
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
-    this.posts = this.allPosts.slice(startIndex, endIndex);
-  }
-
-  get hasNextPage(): boolean {
-    return this.currentPage < this.totalPages;
-  }
-
-  get hasPreviousPage(): boolean {
-    return this.currentPage > 1;
-  }
-
-  handleLike(postId: string) {
-    console.log('Like clicked:', postId);
-    this.allPosts = this.allPosts.map((post) => {
-      if (post.id === postId) {
-        return { ...post, likes: post.likes + 1 };
-      }
-      return post;
-    });
-    this.loadPosts(); // Recarrega os posts da página atual
-  }
-
-  handleComment(postId: string) {
-    console.log('Comment clicked:', postId);
   }
 
   goToPage(page: number) {
+    this.currentPage.set(page);
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { page },
       queryParamsHandling: 'merge',
     });
+  }
+
+  handleLike(postId: string) {
+    this.posts.update((posts) =>
+      posts.map((post) =>
+        post.id === postId ? { ...post, likes: post.likes + 1 } : post
+      )
+    );
+  }
+
+  handleComment(postId: string) {
+    console.log('Comment clicked:', postId);
   }
 }

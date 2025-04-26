@@ -1,0 +1,53 @@
+:host {
+  display: contents;
+}
+
+.reply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn {
+  color: var(--grafite);
+  align-self: flex-start;
+  font-size: 0.9375rem; // 15px
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--verde-destaque);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--verde-destaque);
+    outline-offset: 2px;
+  }
+}
+
+.divider {
+  margin: 1rem 0;
+  height: 5.5rem; // 88px
+  border-left: 1px solid var(--cinza-medio);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.body {
+  strong {
+    color: var(--verde-destaque);
+  }
+
+  p {
+    color: var(--cinza-claro);
+  }
+}

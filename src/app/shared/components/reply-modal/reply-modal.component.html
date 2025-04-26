@@ -1,0 +1,29 @@
+<app-modal #modal>
+  <form (ngSubmit)="onSubmit()" class="reply-form">
+    <div class="body">
+      <app-comment [comment]="comment"></app-comment>
+    </div>
+    <div class="divider" role="separator"></div>
+    <app-textarea
+      [ngModel]="replyText()"
+      (ngModelChange)="replyText.set($event)"
+      name="reply"
+      placeholder="Escreva sua resposta..."
+      [rows]="8"
+      [required]="true"
+      aria-label="Texto da resposta"
+    ></app-textarea>
+    <div class="footer">
+      <app-button
+        type="submit"
+        [disabled]="isSubmitDisabled()"
+        aria-label="Enviar resposta"
+      >
+        Responder
+      </app-button>
+    </div>
+  </form>
+</app-modal>
+<button class="btn" (click)="openModal()" aria-label="Abrir modal de resposta">
+  Responder
+</button>
