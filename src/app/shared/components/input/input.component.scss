@@ -28,6 +28,7 @@
 
   &.error {
     border-color: #ff3b3b;
+    background-color: rgba(255, 59, 59, 0.1);
   }
 
   &::placeholder {
@@ -38,4 +39,5 @@
 .error-message {
   font-size: 12px;
   margin-top: 4px;
+  color: #ff3b3b;
 }

@@ -21,7 +21,8 @@
               placeholder="Digite seu nome"
               [(ngModel)]="name"
               name="name"
-              required
+              [required]="true"
+              autocomplete="name"
             ></app-input>
           </div>
 
@@ -32,7 +33,8 @@
               placeholder="Digite seu email"
               [(ngModel)]="email"
               name="email"
-              required
+              [required]="true"
+              autocomplete="email"
             ></app-input>
           </div>
 
@@ -43,7 +45,8 @@
               placeholder="******"
               [(ngModel)]="password"
               name="password"
-              required
+              [required]="true"
+              autocomplete="new-password"
             ></app-input>
           </div>
 

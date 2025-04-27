@@ -16,12 +16,13 @@
         <form class="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
           <div class="form-group">
             <app-input
-              label="Email ou usuário"
-              type="text"
-              placeholder="usuario123"
+              label="Email"
+              type="email"
+              placeholder="Digite seu email"
               [(ngModel)]="email"
               name="email"
-              required
+              [required]="true"
+              autocomplete="email"
             ></app-input>
           </div>
 
@@ -29,10 +30,11 @@
             <app-input
               label="Senha"
               type="password"
-              placeholder="******"
+              placeholder="Digite sua senha"
               [(ngModel)]="password"
               name="password"
-              required
+              [required]="true"
+              autocomplete="current-password"
             ></app-input>
           </div>
 
