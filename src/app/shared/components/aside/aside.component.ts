@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { AccountCircleIconComponent } from '../icons/account-circle-icon/account-circle-icon.component';
-import { LogoutIconComponent } from '../icons/logout-icon/logout-icon.component';
+import { AccountCircleIconComponent } from '../icons/account-circle-icon.component';
+import { LogoutIconComponent } from '../icons/logout-icon.component';
 
 @Component({
   selector: 'app-aside',
@@ -22,10 +22,14 @@ import { LogoutIconComponent } from '../icons/logout-icon/logout-icon.component'
       </div>
 
       <nav class="menu">
-        <a [routerLink]="['/perfil']" class="menu-item">
+        <a
+          [routerLink]="['/profile']"
+          class="menu-item"
+          [class.active]="isActive('/profile')"
+        >
           <div class="menu-content">
             <app-account-circle-icon
-              [color]="isActive('/perfil') ? '#fff' : '#888888'"
+              [color]="isActive('/profile') ? 'white' : 'var(--cinza-medio)'"
             />
             <span>Perfil</span>
           </div>
@@ -33,9 +37,7 @@ import { LogoutIconComponent } from '../icons/logout-icon/logout-icon.component'
 
         <button class="menu-item logout">
           <div class="menu-content" (click)="logout()">
-            <app-logout-icon
-              [color]="isActive('/logout') ? '#fff' : '#888888'"
-            />
+            <app-logout-icon />
             <span>Sair</span>
           </div>
         </button>

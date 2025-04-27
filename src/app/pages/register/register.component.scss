@@ -1,0 +1,15 @@
+@use "../login/login.component.scss" as *;
+
+.form {
+  .form-group {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .password-group {
+    margin-top: 0;
+  }
+}

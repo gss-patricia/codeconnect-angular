@@ -1,0 +1,129 @@
+<div class="app-container">
+  <div class="aside-wrapper">
+    <app-aside />
+  </div>
+  <div class="main-content">
+    <div class="profile-header">
+      <div class="header-content">
+        <div
+          class="avatar"
+          [style.background-image]="'url(' + user().avatarUrl + ')'"
+        ></div>
+        <h1>Meu Perfil</h1>
+      </div>
+      @if (!isEditing()) {
+      <app-button variant="primary" (onClick)="toggleEdit()">
+        Editar Perfil
+      </app-button>
+      }
+    </div>
+
+    <div class="profile-content">
+      @if (isEditing()) {
+      <form class="edit-form">
+        <div class="form-group">
+          <label for="avatarUrl">URL da Foto</label>
+          <app-input
+            id="avatarUrl"
+            [(ngModel)]="tempUser().avatarUrl"
+            (ngModelChange)="updateTempUser('avatarUrl', $event)"
+            name="avatarUrl"
+            placeholder="https://exemplo.com/foto.jpg"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <app-input
+            id="name"
+            [(ngModel)]="tempUser().name"
+            (ngModelChange)="updateTempUser('name', $event)"
+            name="name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <app-input
+            id="email"
+            type="email"
+            [(ngModel)]="tempUser().email"
+            (ngModelChange)="updateTempUser('email', $event)"
+            name="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="address">Endereço</label>
+          <app-input
+            id="address"
+            [(ngModel)]="tempUser().address"
+            (ngModelChange)="updateTempUser('address', $event)"
+            name="address"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descrição</label>
+          <app-textarea
+            id="description"
+            [(ngModel)]="tempUser().description"
+            (ngModelChange)="updateTempUser('description', $event)"
+            name="description"
+            placeholder="Conte um pouco sobre você..."
+            [rows]="4"
+          ></app-textarea>
+        </div>
+
+        <div class="form-actions">
+          <app-button variant="secondary" (onClick)="cancelEdit()">
+            Cancelar
+          </app-button>
+          <app-button variant="primary" (onClick)="saveChanges()">
+            Salvar
+          </app-button>
+        </div>
+      </form>
+      } @else {
+      <div class="profile-info">
+        <div class="info-item">
+          <span class="label">Nome:</span>
+          <span class="value">{{ user().name }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Email:</span>
+          <span class="value">{{ user().email }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Endereço:</span>
+          <span class="value">{{ user().address }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Descrição:</span>
+          <span class="value description">{{
+            user().description || "Nenhuma descrição fornecida."
+          }}</span>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="posts-section">
+      <h2 class="section-title">
+        <a href="#" class="highlight-link">Meus Projetos</a>
+      </h2>
+
+      <div class="posts-grid">
+        @for (post of userPosts(); track post.id) {
+        <app-card-post
+          [post]="post"
+          (onLike)="handleLike($event)"
+          (onComment)="handleComment($event)"
+        />
+        }
+      </div>
+    </div>
+  </div>
+</div>

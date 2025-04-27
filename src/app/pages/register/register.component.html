@@ -3,22 +3,33 @@
     <div class="login-card-content">
       <div class="login-image">
         <img
-          src="assets/login-banner.png"
+          src="assets/create-account-profile.png"
           alt="Code Connect"
           class="main-image"
         />
       </div>
 
       <div class="login-form">
-        <h1 class="heading text-branco">Login</h1>
-        <p class="subtitle text-offwhite">Boas-vindas! Faça seu login.</p>
+        <h1 class="heading text-branco">Cadastro</h1>
+        <p class="subtitle text-offwhite">Olá! Preencha seus dados.</p>
 
-        <form class="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <form class="form" (ngSubmit)="onSubmit()" #registerForm="ngForm">
           <div class="form-group">
             <app-input
-              label="Email ou usuário"
+              label="Nome completo"
               type="text"
-              placeholder="usuario123"
+              placeholder="Digite seu nome"
+              [(ngModel)]="name"
+              name="name"
+              required
+            ></app-input>
+          </div>
+
+          <div class="form-group">
+            <app-input
+              label="Email"
+              type="email"
+              placeholder="Digite seu email"
               [(ngModel)]="email"
               name="email"
               required
@@ -36,17 +47,8 @@
             ></app-input>
           </div>
 
-          <div class="form-options">
-            <app-checkbox [(ngModel)]="rememberMe" name="rememberMe">
-              Lembrar-me
-            </app-checkbox>
-            <app-link to="/forgot-password" variant="light">
-              Esqueci a senha
-            </app-link>
-          </div>
-
           <button type="submit" class="btn-primary">
-            Login
+            Cadastrar
             <i class="fas fa-arrow-right"></i>
           </button>
         </form>
@@ -57,17 +59,9 @@
         ></app-social-login>
 
         <p class="signup-link paragraph-small text-cinza-claro">
-          Ainda não tem conta?
-          <app-link to="/register" variant="highlight">
-            <span class="text-lg signup-text">
-              Crie seu cadastro!
-              <img
-                src="assets/assignment.svg"
-                alt="Cadastro"
-                width="24"
-                height="24"
-              />
-            </span>
+          Já tem conta?
+          <app-link to="/login" variant="highlight">
+            <span class="text-lg signup-text"> Faça seu login! </span>
           </app-link>
         </p>
       </div>

@@ -33,7 +33,7 @@ import { Comment } from '../../models/post.model';
       .comments {
         background-color: var(--cinza-medio);
         padding: 32px 16px;
-        margin-top: 40px;
+        margin-top: 10px;
       }
 
       .comment-list {

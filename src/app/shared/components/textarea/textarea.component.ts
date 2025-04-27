@@ -19,8 +19,8 @@ import {
   ],
   template: `
     <textarea
-      [value]="value"
-      (input)="onInput($event)"
+      [(ngModel)]="value"
+      (ngModelChange)="onValueChange($event)"
       (blur)="onBlur()"
       [placeholder]="placeholder"
       [rows]="rows"
@@ -47,9 +47,7 @@ export class TextareaComponent implements ControlValueAccessor {
   private onChange: (value: string) => void = () => {};
   private onTouched: () => void = () => {};
 
-  onInput(event: Event): void {
-    const value = (event.target as HTMLTextAreaElement).value;
-    this.value = value;
+  onValueChange(value: string): void {
     this.onChange(value);
   }
 

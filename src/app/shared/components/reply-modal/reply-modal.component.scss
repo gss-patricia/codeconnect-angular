@@ -51,3 +51,11 @@
     color: var(--cinza-claro);
   }
 }
+
+::ng-deep dialog .comment-header {
+  color: #fff !important;
+}
+
+::ng-deep dialog .comment-info span {
+  color: var(--cinza-claro) !important;
+}

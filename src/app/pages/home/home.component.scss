@@ -1,14 +1,17 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
+@use "../../../styles/layout" as *;
+
+.app-container {
+  @include page-container;
+}
 
 .aside-wrapper {
-  width: 200px;
-  flex-shrink: 0;
+  @include aside-wrapper;
 }
 
 .main-content {
-  flex: 1;
-  max-width: calc(100% - 224px); // 200px do aside + 24px de gap
+  @include main-content;
 }
 
 // Header e Busca

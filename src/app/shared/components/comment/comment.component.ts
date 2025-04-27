@@ -42,8 +42,8 @@ import { Comment } from '../../models/post.model';
         align-items: center;
       }
 
-      .comment-header ::ng-deep li {
-        color: var(--grafite) !important;
+      .comment-header li {
+        color: var(--grafite);
       }
 
       .comment-info {
